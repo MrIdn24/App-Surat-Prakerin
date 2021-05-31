@@ -1,3 +1,14 @@
+# Cara Install
+1 Clone dulu Projectnya
+2 Jangan lupa bikin Database namanya "uji_level4"
+3 Setelah diclone buka di VSC
+4 Buka terminal ketikan <i>composer install</i> tunggu sampai selesai
+5 Lalu ketikan <i>php artisan key:generate</i>
+6 Sebelum <i>migrate:fresh</i> ganti file .env.example jadi .env dan ubah DBDATABASE dari laravel jadi uji_level4
+7 Setelah itu ketik <i>php artisan migrate:fresh</i>
+8 Terakhir ketikan <i>php artisan serve</i>
+
+#
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
