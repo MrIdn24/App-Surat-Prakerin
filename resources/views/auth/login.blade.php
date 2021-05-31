@@ -3,7 +3,7 @@
 @section('content')
 <div class="container mt-5 pt-5">
     <div class="judul mb-3 w-50 pl-5 m-md-auto">
-        <h1 class="display-4 pl-4">Hello,</h1>
+        <h1 class="display-4 pl-4">Hai,</h1>
         <p class="display-4 pl-4 font-weight-bold text-primary">wellcome!</p>
     </div>
     <form method="POST" class="w-75 m-auto mt-5 pt-3" action="{{ route('login') }}">
