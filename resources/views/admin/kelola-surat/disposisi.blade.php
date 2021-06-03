@@ -1,6 +1,6 @@
 @extends('admin')
 @section('judul')
-Disposisi Surat Mausk
+Disposisi Surat Masuk
 @endsection
 @section('konten')
 <div class="card pt-3">
