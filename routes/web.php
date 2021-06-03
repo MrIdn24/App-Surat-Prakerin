@@ -32,18 +32,18 @@ Route::get('/home/data-kelas', function () {
 // Data Prakeirin
 Route::get('/home/list-pengajuan', function () {
     return view('admin.data-prakerin.pengajuan');
-})->middleware('checkRole:admin,kepsek,siswa');
+})->middleware('checkRole:admin,kepsek,siswa,tu,hubin,kaprog');
 Route::get('/home/rekap-laporan', function () {
     return view('admin.data-prakerin.rekap-laporan');
-})->middleware('checkRole:admin,kepsek,siswa');
+})->middleware('checkRole:admin,kepsek,siswa,tu,hubin,kaprog');
 
 // Kelola Surat
 Route::get('/home/disposisi-surat-masuk', function () {
     return view('admin.kelola-surat.disposisi');
-})->middleware('checkRole:admin,kepsek');
+})->middleware('checkRole:admin,kepsek,tu,hubin,kaprog');
 Route::get('/home/ekspedisi-rekap-surat', function () {
     return view('admin.kelola-surat.ekspedisi-rekap');
-})->middleware('checkRole:admin,kepsek');
+})->middleware('checkRole:admin,kepsek,tu,hubin,kaprog');
 
 Auth::routes();
 

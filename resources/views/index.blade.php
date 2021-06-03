@@ -57,6 +57,61 @@ Dashboard
         </div>
         @endif
 
+@if (Auth::user()->role == 'tu')
+        <div class="col-md-3">
+            <a href="/home/list-pengajuan">
+                <div class="card bg-primary btn-primary">
+                    <div class="card-body text-center">
+                        <i class="fa fa-chart-pie display-1"></i>
+                    </div>
+                    <div class="card-footer bg-white text-dark text-center">
+                        <h4>Data Prakerin</h4>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a href="/home/disposisi-surat-masuk">
+                <div class="card bg-primary btn-primary">
+                    <div class="card-body text-center">
+                        <i class="fa fa-envelope display-1"></i>
+                    </div>
+                    <div class="card-footer bg-white text-dark text-center">
+                        <h4>Kelola Surat</h4>
+                    </div>
+                </div>
+            </a>
+        </div>
+        @endif
+
+@if (Auth::user()->role == 'hubin')
+        <div class="col-md-3">
+            <a href="/home/list-pengajuan">
+                <div class="card bg-primary btn-primary">
+                    <div class="card-body text-center">
+                        <i class="fa fa-chart-pie display-1"></i>
+                    </div>
+                    <div class="card-footer bg-white text-dark text-center">
+                        <h4>Data Prakerin</h4>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a href="/home/disposisi-surat-masuk">
+                <div class="card bg-primary btn-primary">
+                    <div class="card-body text-center">
+                        <i class="fa fa-envelope display-1"></i>
+                    </div>
+                    <div class="card-footer bg-white text-dark text-center">
+                        <h4>Kelola Surat</h4>
+                    </div>
+                </div>
+            </a>
+        </div>
+        @endif
+
+
         @if (Auth::user()->role == 'siswa')
         <div class="col-md-3">
             <a href="/home/list-pengajuan">
@@ -71,6 +126,34 @@ Dashboard
             </a>
         </div>
         @endif
+
+        @if (Auth::user()->role == 'kaprog')
+        <div class="col-md-3">
+            <a href="/home/list-pengajuan">
+                <div class="card bg-primary btn-primary">
+                    <div class="card-body text-center">
+                        <i class="fa fa-chart-pie display-1"></i>
+                    </div>
+                    <div class="card-footer bg-white text-dark text-center">
+                        <h4>Data Prakerin</h4>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a href="/home/disposisi-surat-masuk">
+                <div class="card bg-primary btn-primary">
+                    <div class="card-body text-center">
+                        <i class="fa fa-envelope display-1"></i>
+                    </div>
+                    <div class="card-footer bg-white text-dark text-center">
+                        <h4>Kelola Surat</h4>
+                    </div>
+                </div>
+            </a>
+        </div>
+        @endif
+
 
         @if (Auth::user()->role == 'kepsek')
         <div class="col-md-3">

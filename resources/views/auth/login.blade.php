@@ -6,7 +6,7 @@
         <h1 class="display-4 pl-4">Hello,</h1>
         <p class="display-4 pl-4 font-weight-bold text-primary">wellcome!</p>
     </div>
-    <form method="POST" class="w-75 m-auto mt-5 pt-3" action="{{ route('login') }}">
+    <form method="POST" class="w-75 m-auto mt-5 pt-2" action="{{ route('login') }}">
         @csrf
 
         <div class="form-group row justify-content-md-center">
@@ -49,7 +49,7 @@
         </div>
 
         <div class="form-group row pt-3 justify-content-md-center pl-4 ml-5">
-            <div class="col-md-8">
+            <div class="col-md-8 pt-4">
                 <button type="submit" class="btn btn-primary rounded-0 pr-5 pl-5">
                     {{ __('Login') }}
                 </button>

@@ -40,6 +40,24 @@
             </li>
             @endif
 
+            {{-- Side TU --}}
+            @if (Auth::user()->role == 'tu')
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-chart-pie"></i><span>Data Prakerin</span></a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link active" href="/home/list-pengajuan">List Pengajuan</a></li>
+                    <li><a class="nav-link active" href="/home/rekap-laporan">Rekap Laporan Siswa</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-envelope"></i><span>Kelola Surat</span></a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="/home/disposisi-surat-masuk">Disposisi Surat Masuk</a></li>
+                    <li><a class="nav-link" href="/home/ekspedisi-rekap-surat">Ekspedisi Rekap Surat</a></li>
+                </ul>
+            </li>
+            @endif
+
             {{-- Side Siswa --}}
             @if (Auth::user()->role == 'siswa')
             <li class="nav-item dropdown">
@@ -47,6 +65,24 @@
                 <ul class="dropdown-menu">
                     <li><a class="nav-link active" href="/home/list-pengajuan">List Pengajuan</a></li>
                     <li><a class="nav-link active" href="/home/rekap-laporan">Rekap Laporan Siswa</a></li>
+                </ul>
+            </li>
+            @endif
+
+        {{-- Side kaprog --}}
+            @if (Auth::user()->role == 'kaprog')
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-chart-pie"></i><span>Data Prakerin</span></a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link active" href="/home/list-pengajuan">List Pengajuan</a></li>
+                    <li><a class="nav-link active" href="/home/rekap-laporan">Rekap Laporan Siswa</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-envelope"></i><span>Kelola Surat</span></a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="/home/disposisi-surat-masuk">Disposisi Surat Masuk</a></li>
+                    <li><a class="nav-link" href="/home/ekspedisi-rekap-surat">Ekspedisi Rekap Surat</a></li>
                 </ul>
             </li>
             @endif
