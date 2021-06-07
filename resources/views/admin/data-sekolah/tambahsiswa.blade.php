@@ -14,19 +14,26 @@ INPUT DATA SISWA
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Nama</label>
                         <div class="col-sm-9">
-                          <input type="text" name="nama" class="form-control" required="">
+                          <input type="text" name="nama" class="form-control @error('nama') is-invalid @enderror" autofocus>
+                          <span class="invalid-feedback">Silahkan isi form.</span>
                         </div>
                       </div>
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Kelas</label>
                         <div class="col-sm-9">
-                          <input type="text" name="kelas" class="form-control" required="">
+                          <input type="text" name="kelas" class="form-control @error('kelas')
+                              is-invalid
+                          @enderror" >
+                          <span class="invalid-feedback">Silahkan isi form.</span>
                         </div>
                       </div>
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Jenis Kelamin</label>
                         <div class="col-sm-9">
-                          <input type="text" name="jk" class="form-control" required="">
+                          <input type="text" name="jk" class="form-control @error('jk')
+                              is-invalid
+                          @enderror" >
+                          <span class="invalid-feedback">Silahkan isi form.</span>
                         </div>
                       </div>
                   <div class="card-footer">

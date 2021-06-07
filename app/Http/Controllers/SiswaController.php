@@ -20,8 +20,14 @@ class SiswaController extends Controller
 
     public function storesiswa(Request $request)
     {
+        $request->validate([
+            "nama" => "required",
+            "kelas" => "required",
+            "jk" => "required",
+        ]);
+
         siswa::create($request->all());
-        return redirect()->route('admin.data-sekolah.datasiswa');
+        return redirect()->route('admin.data-sekolah.datasiswa')->with('notif', 'Berhasil menambah siswa');
     }
 
     public function editsiswa($id)
@@ -30,8 +36,14 @@ class SiswaController extends Controller
         return view('admin.data-sekolah.editsiswa', compact('siswa'));
     }
 
-    public function updatesiswa(Request $request,$id)
+    public function updatesiswa(Request $request, $id)
     {
+        $request->validate([
+            "nama" => "required",
+            "kelas" => "required",
+            "jk" => "required",
+        ]);
+
         siswa::find($id)->update($request->all());
         return redirect()->route('admin.data-sekolah.datasiswa');
     }
@@ -39,6 +51,6 @@ class SiswaController extends Controller
     public function hapussiswa($id)
     {
         siswa::destroy($id);
-        return redirect()->route('admin.data-sekolah.datasiswa');
+        return redirect()->route('admin.data-sekolah.datasiswa')->with('notif', 'Berhasil menghapus siswa');
     }
 }

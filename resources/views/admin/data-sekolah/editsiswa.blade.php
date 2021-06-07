@@ -13,15 +13,15 @@ EDIT DATA SISWA
                   <div class="card-body">
                     <div class="form-group">
                       <label>Nama</label>
-                      <input type="text" name="nama" class="form-control" required="" value="{{ $siswa->nama }}">
+                      <input type="text" name="nama" class="form-control @error('nama') is-invalid @enderror" value="{{ $siswa->nama }}">
                     </div>
                     <div class="form-group">
                       <label>Kelas</label>
-                      <input type="text" name="kelas" class="form-control" required="" value="{{ $siswa->kelas }}">
+                      <input type="text" name="kelas" class="form-control @error('kelas') is-invalid @enderror" value="{{ $siswa->kelas }}">
                     </div>
                     <div class="form-group">
                       <label>Jenis Kelamin</label>
-                      <input type="text" name="jk" class="form-control" required="" value="{{ $siswa->jk }}">
+                      <input type="text" name="jk" class="form-control @error('jk') is-invalid @enderror" value="{{ $siswa->jk }}">
                     </div>
                   </div>
                   <div class="card-footer">
