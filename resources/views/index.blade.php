@@ -20,7 +20,7 @@ Dashboard
 
         @if (Auth::user()->role == 'admin')
         <div class="col-md-3">
-            <a href="/home/data-siswa">
+            <a href="/home/datasiswa">
                 <div class="card bg-primary btn-primary">
                     <div class="card-body text-center">
                         <i class="fa fa-graduation-cap display-1"></i>
@@ -186,9 +186,9 @@ Dashboard
     <li class="nav-item dropdown active">
         <a href="#" class="nav-link has-dropdown"><i class="fas fa-graduation-cap"></i><span>Data Sekolah</span></a>
         <ul class="dropdown-menu">
-            <li><a class="nav-link active" href="/home/data-siswa">Data Siswa</a></li>
-            <li><a class="nav-link" href="/home/data-petugas">Data Petugas</a></li>
-            <li><a class="nav-link" href="/home/data-kelas">Data Kelas</a></li>
+            <li><a class="nav-link active" href="/home/datasiswa">Data Siswa</a></li>
+            <li><a class="nav-link" href="/home/datapetugas">Data Petugas</a></li>
+            <li><a class="nav-link" href="/home/datakelas">Data Kelas</a></li>
         </ul>
     </li>
     @endsection

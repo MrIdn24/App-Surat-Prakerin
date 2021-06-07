@@ -1,65 +1,35 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mt-5 pt-5">
-    <div class="judul mb-3 w-50 pl-5 m-md-auto">
-        <h1 class="display-4 pl-4">Hello,</h1>
-        <p class="display-4 pl-4 font-weight-bold text-primary">wellcome!</p>
-    </div>
-    <form method="POST" class="w-75 m-auto mt-5 pt-2" action="{{ route('login') }}">
-        @csrf
-
-        <div class="form-group row justify-content-md-center">
-            <div class="col-md-6">
-                <input id="email" type="email" style="border-left: 5px solid #007bff" class="form-control rounded-0 @error('email') is-invalid @enderror" placeholder="Email" name="email"
-                    value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                @error('email')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-                @enderror
+    <div class="container mt-5 pt-5">
+        <div class="card w-75 m-auto rounded-0">
+            <div class="card-header text-center">
+                <h2>Login Nyurat</h2>
             </div>
-        </div>
-
-        <div class="form-group row justify-content-md-center">
-            <div class="col-md-6">
-                <input id="password" type="password" placeholder="Password" style="border-left: 5px solid #007bff" class="form-control rounded-0 @error('password') is-invalid @enderror"
-                    name="password" required autocomplete="current-password">
-
-                @error('password')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-                @enderror
-            </div>
-        </div>
-
-        <div class="form-group row justify-content-md-center">
-            <div class="col-md-6">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="remember" id="remember"
-                        {{ old('remember') ? 'checked' : '' }}>
-
-                    <label class="form-check-label" for="remember">
-                        {{ __('Remember Me') }}
-                    </label>
+            <div class="card-body bg-white">
+                <div class="row justify-content-center mb-3 mt-3">
+                    <div class="col-md-6">
+                        <form method="POST" class="w-75 m-auto mt-5 pt-2" action="{{ route('login') }}">
+                            @csrf
+                            <div class="form-group">
+                                <input type="text" name="email" id="email" class="form-control mb-3" placeholder="Email"
+                                    value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input type="password" name="password" id="password" class="form-control mb-3"
+                                    placeholder="Password">
+                                <div class="form-check">
+                                    <input type="checkbox" name="remeber" id="remember">
+                                    {{ old('remeber') ? 'checked' : '' }}
+                                    <label for="remember">Remember Me</label>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-dark rounded-0 w-100">Masuk</button>
+                            <span class="row justify-content-center pt-1 pb-1">-or-</span>
+                            <a href="{{ route('register') }}" class="btn btn-outline-dark rounded-0 w-100">Register</a>
+                        </form>
+                    </div>
+                    <div class="col-md-4 mt-4">
+                        <img src="{{ asset('assets/img/tb.png') }}" height="200">
+                    </div>
                 </div>
             </div>
         </div>
-
-        <div class="form-group row pt-3 justify-content-md-center pl-4 ml-5">
-            <div class="col-md-8 pt-4">
-                <button type="submit" class="btn btn-primary rounded-0 pr-5 pl-5">
-                    {{ __('Login') }}
-                </button>
-                <a class="btn btn-outline-primary ml-4 rounded-0 pr-5 pl-5" href="{{ route('register') }}">{{ __('Register') }}</a>
-                <br>
-                @if (Route::has('password.request'))
-                <a class="btn btn-link" href="{{ route('password.request') }}">
-                    {{ __('Forgot Your Password?') }}
-                </a>
-                @endif
-            </div>
-        </div>
-    </form>
