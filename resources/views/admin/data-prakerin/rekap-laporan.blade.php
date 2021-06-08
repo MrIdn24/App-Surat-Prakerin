@@ -5,7 +5,10 @@ Rekap Laporan Siswa
 @section('konten')
 <div class="card pt-3">
     <div class="card-body">
-        <button class="btn btn-primary mb-3 float-md-right"><i class="fas fa-user"></i> Tambah Data</button>
+        @if ($message = Session::get('notif'))
+            <div class="alert alert-success">{{ $message }}</div>
+        @endif
+        <a href="{{ route('admin.data-prakerin.tambah-lapor') }}" class="btn btn-primary mb-3 float-md-right"><i class="fas fa-user"></i>Tambah Data</a>
         <div class="table-responsive">
             <table class="table table-bordered table-md text-center">
                 <tr class="bg-primary text-white">
@@ -16,22 +19,25 @@ Rekap Laporan Siswa
                     <th>Waktu</th>
                     <th>Action</th>
                 </tr>
+                @foreach ($lapor as $no => $lpr)
                 <tr>
-                    <th>&nbsp;</th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
+                    <th>{{ ++$no }}</th>
+                    <th>{{ $lpr->tanggal }}</th>
+                    <th>{{ $lpr->tempat }}</th>
+                    <th>{{ $lpr->jenis }}</th>
+                    <th>{{ $lpr->waktu }}</th>
+                    <th>
+                        <div class="btn-group">
+                            <a href="{{ route('admin.data-prakerin.edit-lapor', ['id'=>$lpr->id]) }}" class="btn btn-warning">Edit</a>
+                            <form action="{{ route('admin.data-prakerin.delete-lapor', ['id'=>$lpr->id]) }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('yakin hapus?')">Hapus</button>
+                            </form>
+                        </div>
+                    </th>
                 </tr>
-                <tr>
-                    <th>&nbsp;</th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                </tr>
+                @endforeach
             </table>
         </div>
     </div>
