@@ -64,7 +64,8 @@
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-chart-pie"></i><span>Data Prakerin</span></a>
                 <ul class="dropdown-menu">
-                    <li><a class="nav-link active" href="/home/list-pengajuan">List Pengajuan</a></li>
+                    <li><a class="nav-link active" href="/home/entri-transaksi">Entri Transaksi Pengajuan</a></li>
+                    <li><a class="nav-link active" href="/home/cetak-surat">Cetak Surat Prakerin</a></li>
                     <li><a class="nav-link active" href="/home/rekap-laporan">Rekap Laporan Siswa</a></li>
                 </ul>
             </li>

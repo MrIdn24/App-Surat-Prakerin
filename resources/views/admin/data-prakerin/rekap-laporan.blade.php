@@ -22,10 +22,10 @@ Rekap Laporan Siswa
                 @foreach ($lapor as $no => $lpr)
                 <tr>
                     <th>{{ ++$no }}</th>
-                    <th>{{ $lpr->tanggal }}</th>
+                    <th>{{ date("l, d M Y", strtotime($lpr->tanggal)) }}</th>
                     <th>{{ $lpr->tempat }}</th>
                     <th>{{ $lpr->jenis }}</th>
-                    <th>{{ $lpr->waktu }}</th>
+                    <th>{{ date("H:s", strtotime($lpr->waktu)) }}</th>
                     <th>
                         <div class="btn-group">
                             <a href="{{ route('admin.data-prakerin.edit-lapor', ['id'=>$lpr->id]) }}" class="btn btn-warning">Edit</a>

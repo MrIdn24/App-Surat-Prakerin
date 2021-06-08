@@ -114,7 +114,7 @@ Dashboard
 
         @if (Auth::user()->role == 'siswa')
         <div class="col-md-3">
-            <a href="/home/list-pengajuan">
+            <a href="/home/entri-transaksi">
                 <div class="card bg-primary btn-primary">
                     <div class="card-body text-center">
                         <i class="fa fa-chart-pie display-1"></i>
