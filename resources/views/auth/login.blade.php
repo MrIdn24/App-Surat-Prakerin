@@ -12,9 +12,9 @@
                         <form method="POST" class="w-75 m-auto mt-5 pt-2" action="{{ route('login') }}">
                             @csrf
                             <div class="form-group">
-                                <input type="text" name="email" id="email" class="form-control mb-3" placeholder="Email"
+                                <input type="text" name="email" id="email" class="form-control mb-3  @error('email') is-invalid @enderror" placeholder="Email"
                                     value="{{ old('email') }}" required autocomplete="email" autofocus>
-                                <input type="password" name="password" id="password" class="form-control mb-3"
+                                <input type="password" name="password" id="password" class="form-control mb-3  @error('password') is-invalid @enderror"
                                     placeholder="Password">
                                 <div class="form-check">
                                     <input type="checkbox" name="remeber" id="remember">

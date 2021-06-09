@@ -89,6 +89,25 @@
             </li>
             @endif
 
+        {{-- Side Hubin--}}
+            @if (Auth::user()->role == 'hubin')
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-chart-pie"></i><span>Data Prakerin</span></a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link active" href="/home/entri-transaksi">Entri Transaksi Pengajuan</a></li>
+                    <li><a class="nav-link active" href="/home/cetak-surat">Cetak Surat Prakerin</a></li>
+                    <li><a class="nav-link active" href="/home/rekap-laporan">Rekap Laporan Siswa</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-envelope"></i><span>Kelola Surat</span></a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="/home/disposisi-surat-masuk">Disposisi Surat Masuk</a></li>
+                    <li><a class="nav-link" href="/home/ekspedisi-rekap-surat">Ekspedisi Rekap Surat</a></li>
+                </ul>
+            </li>
+            @endif
+
             {{-- Side Kepsek --}}
             @if (Auth::user()->role == 'kepsek')
             <li class="nav-item dropdown">

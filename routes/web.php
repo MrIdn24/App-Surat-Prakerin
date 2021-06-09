@@ -69,7 +69,7 @@ Route::middleware('checkRole:admin')->group(function () {
 });
 
 // data prakerin
-Route::middleware('checkRole:admin,kepsek,siswa')->group(function () {
+Route::middleware('checkRole:admin,kepsek,siswa,hubin')->group(function () {
     // laporan
     Route::middleware('checkRole:admin,siswa')->group(function () {
         Route::get('/home/rekap-laporan', [LaporanController::class, 'datalapor'])->name('admin.data-prakerin.rekap-lapor');
@@ -101,10 +101,10 @@ Route::middleware('checkRole:admin,kepsek,siswa')->group(function () {
 
     // cetak surat
 
-    Route::middleware('checkRole:siswa')->group(function () {
+    Route::middleware('checkRole:siswa,hubin')->group(function () {
         Route::get('/home/cetak-surat', [CetakController::class, 'createcetak'])->name('siswa.cetak');
         Route::post('/home/store-surat', [CetakController::class, 'storecetak'])->name('siswa.store');
-        Route::get('/home/pdf', [CetakController::class, 'showpdf'])->name('siswa.pdf');
+        Route::get('/home/pdf/{id}', [CetakController::class, 'cetakpdf'])->name('siswa.pdf');
     });
 });
 
